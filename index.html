@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#334e3d">
+  <meta name="description" content="Formulario visual de teoría de inventarios. Fórmulas, nomenclatura y ejemplos de EOQ, descuentos, déficit y producción.">
+  <title>Teoría de inventarios · Formulario visual</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23334e3d'/%3E%3Cpath d='M14 43V20l15 23V20l15 23V20' fill='none' stroke='%23e5edcd' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir al formulario</a>
+  <aside class="sidebar">
+    <a class="brand" href="#inicio"><span class="brand-mark">∑</span><span>Cuaderno de estudio<small>INVESTIGACIÓN DE OPERACIONES</small></span></a>
+    <div class="nav-heading">UNIDAD 4</div>
+    <nav aria-label="Temas del formulario">
+      <a class="nav-item active" href="#inicio" data-target="inicio"><span class="nav-symbol">⊞</span>Formulario completo</a>
+      <a class="nav-item" href="#sin-deficit" data-target="sin-deficit"><span class="topic-number">4.2.1</span><span>Sin déficit<small>Modelo EOQ básico</small></span></a>
+      <a class="nav-item" href="#descuentos" data-target="descuentos"><span class="topic-number">4.2</span><span>Con descuentos<small>Precios por cantidad</small></span></a>
+      <a class="nav-item" href="#con-deficit" data-target="con-deficit"><span class="topic-number">4.2.2</span><span>Con déficit<small>Faltantes planeados</small></span></a>
+      <a class="nav-item" href="#produccion" data-target="produccion"><span class="topic-number">4.3</span><span>Producción<small>Modelo de corrida</small></span></a>
+    </nav>
+    <div class="sidebar-tip"><span class="tip-icon">↔</span><strong>Las unidades importan</strong><p>Expresa demanda, costos y tiempos en el mismo periodo antes de sustituir.</p></div>
+    <a class="source-link" href="https://docs.google.com/document/d/1M4wXQf_4Ynui23ydVq3efNEagsA0rhKPHEL_d-9XmbM/edit" target="_blank" rel="noopener">Abrir formulario original <span>↗</span></a>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <span class="breadcrumb">Unidad 4 <span>/</span> Formulario visual</span>
+      <div class="tools"><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Buscar fórmula…" aria-label="Buscar fórmula o concepto"></label><button id="print" class="print-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V8h16v9h-3M7 14h10v7H7z"/></svg><span>Imprimir</span></button></div>
+    </header>
+    <main id="main">
+      <section id="inicio" class="intro">
+        <div class="intro-copy"><p class="eyebrow">FORMULARIO DE CLASE</p><h1>Teoría de<br><em>inventarios.</em></h1><p class="intro-description">Cuánto pedir, cuándo hacerlo y cómo encontrar el menor costo. Todas las fórmulas, en un mismo lugar.</p><div class="intro-key"><span>Q*</span> Cantidad óptima <i></i><span>t*</span> Tiempo entre pedidos</div></div>
+        <div class="explorer"><div class="explorer-heading"><div><p class="eyebrow">EL INVENTARIO EN EL TIEMPO</p><h2>Un ciclo, una nueva orden.</h2></div><span class="live-dot" aria-hidden="true"></span></div><svg id="cycle-chart" viewBox="0 0 490 180" role="img" aria-label="Inventario de McBurger durante tres semanas"></svg><div class="slider-label"><label for="demand">Demanda semanal</label><output id="demand-value" for="demand">300 lb</output></div><input type="range" id="demand" min="100" max="700" step="10" value="300" aria-describedby="explorer-assumptions"><div class="explorer-results" aria-live="polite"><span>Lote óptimo <strong id="result-q">239.05 lb</strong></span><span>Entre pedidos <strong id="result-t">0.7968 semanas</strong></span></div><p id="explorer-assumptions">McBurger · K = $20/orden · h = $0.21/(lb·semana)</p></div>
+      </section>
+      <div class="section-divider"><span>ELIGE EL MODELO SEGÚN EL PROBLEMA</span><span>Fórmulas + nomenclatura + ejemplos</span></div>
+      <div id="search-status" role="status" hidden></div>
+      <div id="topics"></div>
+      <div id="empty" hidden><h2>No encontramos esa fórmula.</h2><p>Prueba con “costo”, “faltante”, “Q” o “producción”.</p><button id="clear-search">Ver todas las fórmulas</button></div>
+      <footer><span>Investigación de Operaciones · Teoría de inventarios</span><a href="#inicio">Volver arriba ↑</a><p>Basado en el formulario y los apuntes compartidos. El ejemplo de descuentos es ilustrativo. El ejercicio de 4.3 queda pendiente de completarse en clase.</p></footer>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+</body>
+</html>
